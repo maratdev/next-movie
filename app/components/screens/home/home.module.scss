@@ -1,0 +1,7 @@
+$bar-width: 20%;
+.center {
+  flex-grow: 1;
+  height: 100vh;
+  margin: 0 auto;
+  @apply border-r border-l border-gray-800 p-layout;
+}
