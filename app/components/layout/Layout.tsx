@@ -7,7 +7,7 @@ const Layout: FC<{ children?: ReactNode }> = ({ children }) => {
 	return (
 		<main className={styles.layout}>
 			<Navigation />
-			{children}
+			<section className={styles.center}>{children}</section>
 			<Sidebar />
 		</main>
 	);
