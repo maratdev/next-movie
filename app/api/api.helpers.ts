@@ -1,12 +1,10 @@
 export const errorCatch = (error: any): string => {
-	if (typeof error.response.data.message === 'object') {
-		return error.response
+	if (error.response.data && error.response) {
+		return typeof error.response.data.message === 'object'
 			? error.response.data.message[0]
-			: error.message;
+			: error.response.data.message;
 	} else {
-		return error.response
-			? error.response.data.message
-			: error.message;
+		return error.message;
 	}
 }
 

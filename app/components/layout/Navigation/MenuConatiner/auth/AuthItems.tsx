@@ -1,8 +1,14 @@
-import { FC } from 'react';
-import { useAuth } from '@/hooks/useAuth';
-import MenuItem from '../MenuItem'
+import { FC } from 'react'
+
+import { useAuth } from '@/hooks/useAuth'
+
+import { getAdminHomeUrl } from '@/config/url.config'
+
+
+
 import LogoutButton from './LogoutButton'
-import { getAdminHomeUrl } from '@/config/url.config';
+import MenuItem from '@/components/layout/Navigation/MenuConatiner/Menu/MenuItem/MenuItem';
+
 const AuthItems: FC = () => {
 	const { user } = useAuth()
 
@@ -34,6 +40,6 @@ const AuthItems: FC = () => {
 			)}
 		</>
 	)
-};
+}
 
-export default AuthItems;
+export default AuthItems
