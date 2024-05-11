@@ -8,6 +8,7 @@ import Meta from '@/utils/meta/Meta';
 import Heading from '@/ui/heading/Heading';
 import AuthFields from '@/components/shared/user/AuthFields';
 import Button from '@/ui/form-elements/Button';
+import { useActions } from '@/hooks/useActions';
 
 const Auth: FC = () => {
 	useAuthRedirect()
@@ -21,8 +22,7 @@ const Auth: FC = () => {
 	} = useForm<IAuthInput>({
 		mode: 'onChange',
 	})
-	const login = (data:any) => { console.table(data) }
-	const register = (data:any) => {console.table(data)}
+	const { login, register } = useActions()
 
 	const onSubmit: SubmitHandler<IAuthInput> = (data) => {
 		if (type === 'login') login(data)
