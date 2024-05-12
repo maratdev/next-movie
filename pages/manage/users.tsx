@@ -1,11 +1,8 @@
 import { NextPageAuth } from '@/shared/types/auth.types';
+import UserList from '@/screens/admin/users/UserList';
 
 const UserListPage: NextPageAuth = () => {
-	return (
-		<div>
-			users
-		</div>
-	);
+	return <UserList/>
 };
 UserListPage.isOnlyAdmin = true;
 
