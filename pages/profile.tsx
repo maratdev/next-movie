@@ -1,12 +1,13 @@
-import { FC } from 'react';
+import { NextPageAuth } from '@/shared/types/auth.types';
 
 
-const ProfilePage: FC = () => {
+const ProfilePage: NextPageAuth = () => {
 	return (
 		<div>
 			profile
 		</div>
 	);
 };
+ProfilePage.isOnlyUser = true;
 
 export default ProfilePage;
