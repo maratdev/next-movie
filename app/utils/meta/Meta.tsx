@@ -7,7 +7,7 @@ import { onlyText } from '@/utils/string/clearTxt';
 import { MetaNoIndex } from '@/utils/meta/MetaNoIndex';
 import logoImage from '@/assets/images/logo.svg'
 
-const Meta: FC<ISeo> = ({ title, description, image, children }) => {
+const Meta: FC<ISeo> = ({ title, description, image=null, children }) => {
 	const asPath = usePathname();
 	const currentUrl = `${process.env.REACT_URL}${asPath}`;
 	return (
