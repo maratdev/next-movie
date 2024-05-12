@@ -16,12 +16,12 @@ const AuthProvider: FC<TypeComponentAuthFields & { children: ReactNode }> = ({ c
 			const accessToken = Cookies.get('accessToken');
 			if (accessToken) checkAuth();
 		},
-		[])
+		[]) // eslint-disable-line
 
 	useEffect(() => {
 		const refreshToken = Cookies.get('refreshToken')
 		if (!refreshToken && user) logout()
-	}, [pathname])
+	}, [pathname]) // eslint-disable-line
 
 	return !isOnlyAdmin && !isOnlyUser ? (
 		<>{children}</>
