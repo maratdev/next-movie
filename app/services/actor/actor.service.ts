@@ -16,7 +16,7 @@ export const ActorService = {
 	},
 
 	async update(_id: string, data: IActorEditInput) {
-		return axios.put<string>(getActorsUrl(`/${_id}`), data)
+		return axios.patch<string>(getActorsUrl(`/${_id}`), data)
 	},
 
 	async delete(_id: string) {

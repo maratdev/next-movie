@@ -28,9 +28,9 @@ const GenreList: FC = () => {
 				handleSearch={handleSearch}
 			/>
 			<AdminTable
+				isLoading={isLoading}
 				tableItems={data || []}
 				headerItems={['Name', 'Slug']}
-				isLoading={isLoading}
 				removeHandler={deleteAsync}
 			/>
 		</Meta>

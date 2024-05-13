@@ -63,8 +63,7 @@ const TextEditor: FC<ITextEditor> = ({
 							},
 							blockType: {
 								inDropdown: false,
-								className: undefined,
-								type: "unstyled",
+								options: [],
 							},
 							list: {
 								inDrodown: false,
