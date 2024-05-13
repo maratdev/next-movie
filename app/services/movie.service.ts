@@ -21,7 +21,7 @@ export const MovieService = {
 			getMoviesUrl('/popular')
 		)
 
-		return [movies]
+		return movies
 	},
 
 };
