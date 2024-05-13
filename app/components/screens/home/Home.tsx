@@ -1,8 +1,10 @@
 import React, { FC } from 'react';
 import Heading from '@/ui/heading/Heading';
 import Meta from '@/utils/meta/Meta';
+import { IHome } from '@/screens/home/home.types';
+import Slider from '@/ui/slider/Slider';
 
-const Home: FC = () => {
+const Home: FC<IHome> = ({slides}) => {
 	return (
 		<Meta
 			title='Watch movies online'
@@ -10,6 +12,7 @@ const Home: FC = () => {
 			keywords='movie,tv,watch,online'
 		>
 			<Heading title='Watch movies online' className='text-gray-300 mb-8 text-xl' />
+			{slides.length && <Slider slides={slides} />}
 		</Meta>
 	);
 };

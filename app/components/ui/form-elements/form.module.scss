@@ -7,7 +7,11 @@
 
 	> label {
 		@apply block;
-
+		.icon {
+			@apply text-xs uppercase;
+			color: cornflowerblue;
+			text-decoration: 1px underline dotted cornflowerblue;
+		}
 		> span {
 			@apply text-xs uppercase text-gray-600 block;
 		}
