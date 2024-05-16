@@ -10,7 +10,7 @@ import { getGenresUrl } from '@/config/api.config'
 
 export const GenreService = {
 	async getBySlug(slug: string) {
-		return axiosClassic.get<IGenre>(getGenresUrl(`/by-slug/${slug}`))
+		return axiosClassic.get<IGenre>(getGenresUrl(`/slug/${slug}`))
 	},
 
 	async create() {

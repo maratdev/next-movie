@@ -7,12 +7,10 @@ import { MaterialIcon } from '@/components/ui/icons/MaterialIcon'
 import { getGenresListEach } from '@/utils/movie/getGenresList'
 
 import { getGenreUrl, getMovieUrl } from '@/config/url.config'
-
 import styles from './MovieItem.module.scss'
-import { IWidgetMovie } from './movie.types'
+import { IWidgetMovie } from '../MovieList/movie-list.interface';
 
 const MovieItem: FC<{ movie: IWidgetMovie }> = ({ movie }) => {
-	console.log(movie.title)
 	return (
 		<div className={styles.item}>
 			<Link href={getMovieUrl(movie.slug)}>
@@ -38,7 +36,7 @@ const MovieItem: FC<{ movie: IWidgetMovie }> = ({ movie }) => {
 				</div>
 				<div className={styles.rating}>
 					<MaterialIcon name="MdStarRate" />
-					<span>{movie.rating.toFixed(1)}</span>
+					<span>{Number(movie.rating).toFixed(1)}</span>
 				</div>
 			</div>
 		</div>

@@ -14,6 +14,7 @@ export interface IParameters {
 	country: string
 }
 
+
 export interface IActor {
 	_id: string
 	photo: string
@@ -32,6 +33,6 @@ export interface IMovie {
 	actors: IActor[]
 	countOpened: number
 	videoUrl: string
-	rating: number
+	rating: string
 	slug: string
 }

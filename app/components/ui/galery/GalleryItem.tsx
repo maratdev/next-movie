@@ -16,7 +16,7 @@ const GalleryItem: FC<IGalleryItemProps> = ({ item, variant }) => {
 			<Image
 				alt={item.name}
 				src={item.posterPath}
-				layout='fill'
+				fill
 				draggable={false}
 				priority
 			/>

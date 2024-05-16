@@ -5,12 +5,11 @@ import Link from 'next/link';
 import MovieItem from '@/components/layout/Sidebar/MoviesContainer/MovieItem/MovieItem';
 
 const MovieList: FC<{ list: IMovieList }> = ({ list: { link, movies, title } }) => {
-	console.log(movies);
 	return (
 		<div className={styles.list}>
 			<div className={styles.heading}>{title}</div>
 
-			{movies?.map(movie => (
+			{movies?.map((movie) => (
 				<MovieItem key={movie._id} movie={movie} />
 			))}
 			<Link className={styles.button} href={link}>
