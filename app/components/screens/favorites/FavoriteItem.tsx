@@ -15,7 +15,7 @@ const FavoriteItem: FC<{ item: IFavoriteItem }> = ({ item }) => {
 					<Image
 						alt={item.name}
 						src={item.posterPath}
-						layout="fill"
+						fill
 						draggable={false}
 						priority
 					/>
