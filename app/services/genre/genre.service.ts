@@ -36,7 +36,7 @@ export const GenreService = {
 	},
 
 	async getCollections() {
-		return axiosClassic.get<ICollection[]>(getGenresUrl('/collections'))
+		return axiosClassic.get<ICollection[]>(getGenresUrl('/collection'))
 	},
 
 	async getById(_id: string) {
