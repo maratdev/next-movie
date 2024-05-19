@@ -16,7 +16,6 @@ export const getStaticProps: GetStaticProps = async () => {
 		const { data: movies } = await MovieService.getMovies()
 		const { data: dataActors } = await ActorService.getAll()
 		const dataTrendingMovies = await MovieService.getMostPopularMovies()
-
 		const slides: ISlide[] = movies.slice(0, 3).map((m) => ({
 			_id: m._id,
 			link: getMovieUrl(m.slug),

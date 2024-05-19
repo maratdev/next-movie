@@ -7,7 +7,6 @@ import styles from './form.module.scss';
 
 const Field = forwardRef<HTMLInputElement, IField>(
 	({ placeholder, error, type = 'text', style, ...rest }, ref) => {
-		console.log(placeholder);
 		return (
 			<div className={cn(styles.common, styles.field)} style={style}>
 				<label>

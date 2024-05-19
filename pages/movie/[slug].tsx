@@ -59,8 +59,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 			props: { movie, similarMovies },
 		}
 	} catch (e) {
-		console.log(errorCatch(e))
-
+		errorCatch(e)
 		return {
 			notFound: true,
 		}

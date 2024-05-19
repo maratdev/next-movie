@@ -1,11 +1,11 @@
 import { FC } from 'react'
 
 import Heading from '@/components/ui/heading/Heading'
-import SkeletonLoader from '@/components/ui/skeleton-loader/SkeletonLoader'
+import SkeletonLoader from '@/components/ui/skeleton/SkeletonLoader'
 
-import { Meta } from '@/utils/meta'
+import  Meta  from '@/utils/meta/Meta'
 
-import { getMovieUrl } from '@/configs/url.config'
+import { getMovieUrl } from '@/config/url.config'
 
 import FavoriteItem from './FavoriteItem'
 import styles from './Favorites.module.scss'
