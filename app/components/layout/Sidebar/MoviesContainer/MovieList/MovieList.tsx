@@ -13,7 +13,7 @@ const MovieList: FC<{ list: IMovieList }> = ({ list: { link, movies, title } }) 
 				<MovieItem key={movie._id} movie={movie} />
 			))}
 			<Link className={styles.button} href={link}>
-				See more
+				Go to list
 			</Link>
 		</div>
 	);

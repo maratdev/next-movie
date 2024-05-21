@@ -1,23 +1,22 @@
-import { FC } from 'react'
+import { FC } from 'react';
+import { MaterialIcon } from '@/components/ui/icons/MaterialIcon';
+import { IMovie } from '@/shared/types/movie.types';
+import { getActorUrl, getGenreUrl } from '@/config/url.config';
+import FavoriteButton from '../FavoriteButton/FavoriteButton';
+import styles from './Content.module.scss';
+import ContentList from './ContentList/ContentList';
+import { useAuth } from '@/hooks/useAuth';
 
-import { MaterialIcon } from '@/components/ui/icons/MaterialIcon'
-
-import { IMovie } from '@/shared/types/movie.types'
-
-import { getActorUrl, getGenreUrl } from '@/config/url.config'
-
-import FavoriteButton from '../FavoriteButton/FavoriteButton'
-
-import styles from './Content.module.scss'
-import ContentList from './ContentList/ContentList'
 
 const Content: FC<{ movie: IMovie }> = ({ movie }) => {
+	const { user } = useAuth();
 	return (
 		<div className={styles.content}>
 			<h1>{movie.title}</h1>
-			<FavoriteButton movieId={movie._id} />
+			{user && <FavoriteButton movieId={movie._id} />}
+
 			<div className={styles.rating}>
-				<MaterialIcon name="MdStarRate" />
+				<MaterialIcon name='MdStarRate' />
 				<span>{movie.rating}</span>
 			</div>
 			<div className={styles.details}>
@@ -26,7 +25,7 @@ const Content: FC<{ movie: IMovie }> = ({ movie }) => {
 				<span>{movie.parameters.duration} min.</span>
 			</div>
 			<ContentList
-				name="Genres"
+				name='Genres'
 				links={movie.genres.map((g) => ({
 					link: getGenreUrl(g.slug),
 					title: g.name,
@@ -34,7 +33,7 @@ const Content: FC<{ movie: IMovie }> = ({ movie }) => {
 				}))}
 			/>
 			<ContentList
-				name="Actors"
+				name='Actors'
 				links={movie.actors.map((a) => ({
 					link: getActorUrl(a.slug),
 					title: a.name,
@@ -42,7 +41,7 @@ const Content: FC<{ movie: IMovie }> = ({ movie }) => {
 				}))}
 			/>
 		</div>
-	)
-}
+	);
+};
 
-export default Content
+export default Content;

@@ -18,6 +18,7 @@ export const getStaticProps: GetStaticProps = async () => {
     const { data: movies } = await MovieService.getMovies()
     return {
       props: { movies },
+      revalidate: 30,
     }
   } catch (e) {
     return {

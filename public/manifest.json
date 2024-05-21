@@ -1,0 +1,16 @@
+{
+  "name": "Movie dom online",
+  "app_name": "Movie dom online",
+  "short_name": "Movie dom online",
+  "description": "Movie dom online is a web application that allows users to search for movies and watch them online.",
+  "theme_color": "#E30B13",
+  "background_color": "#191B1F",
+  "display": "browser",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [{
+    "src": "/favicons/apple-touch-icon-57x57.png",
+    "size": "57x57",
+    "type": "image/png"
+  }]
+}

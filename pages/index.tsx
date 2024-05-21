@@ -9,7 +9,7 @@ import { ActorService } from '@/services/actor/actor.service';
 import { IGalleryItem } from '@/ui/galery/gallery.types';
 
 
-const HomePage: NextPage<IHome> = ({ slides, actors, trendingMovies}) => <Home slides={slides} actors={actors} trendingMovies={trendingMovies} />;
+const HomePage: NextPage<IHome> = (props) => <Home {...props} />;
 
 export const getStaticProps: GetStaticProps = async () => {
 	try {
@@ -48,6 +48,7 @@ export const getStaticProps: GetStaticProps = async () => {
 				slides,
 				trendingMovies,
 			} as IHome,
+			revalidate: 30,
 		}
 	} catch (error) {
 

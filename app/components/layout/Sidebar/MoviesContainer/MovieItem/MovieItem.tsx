@@ -25,14 +25,12 @@ const MovieItem: FC<{ movie: IWidgetMovie }> = ({ movie }) => {
 			</Link>
 			<div className={styles.info}>
 				<div>
-					<div className={styles.title}>{movie.title}</div>
-					<div className={styles.genres}>
+					<h3 className={styles.title}>{movie.title}</h3>
 						{movie.genres?.map(({ slug, name, _id }, idx) => (
-							<Link key={_id} href={getGenreUrl(slug)}>
+							<Link className={styles.genres} key={_id} href={getGenreUrl(slug)}>
 							{getGenresListEach(idx, movie.genres.length, name)}
 							</Link>
 						))}
-					</div>
 				</div>
 				<div className={styles.rating}>
 					<MaterialIcon name="MdStarRate" />

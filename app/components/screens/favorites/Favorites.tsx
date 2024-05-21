@@ -10,10 +10,13 @@ import { getMovieUrl } from '@/config/url.config'
 import FavoriteItem from './FavoriteItem'
 import styles from './Favorites.module.scss'
 import { useFavorites } from './useFavorites'
+import { useAuth } from '@/hooks/useAuth';
 
 const Favorites: FC = () => {
 	const { favoritesMovies, isLoading } = useFavorites()
+	const { user } = useAuth();
 
+	if (!user) return null;
 	return (
 		<Meta title="Favorites">
 			<Heading title={'Favorites'} />

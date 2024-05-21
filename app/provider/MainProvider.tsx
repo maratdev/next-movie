@@ -23,7 +23,7 @@ const MainProvider: FC<TypeComponentAuthFields & { children: ReactNode }> = ({ c
 				<QueryClientProvider client={queryClient}>
 					<ReduxToast />
 					<AuthProvider Component={Component}>
-						<Layout>{children}</Layout>
+						<Layout >{children}</Layout>
 					</AuthProvider>
 				</QueryClientProvider>
 			</Provider>

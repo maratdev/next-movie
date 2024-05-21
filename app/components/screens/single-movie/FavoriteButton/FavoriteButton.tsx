@@ -1,41 +1,42 @@
-import cn from 'classnames'
-import { FC, useEffect, useState } from 'react'
-import { useMutation } from 'react-query'
+import cn from 'classnames';
+import { FC, useEffect, useState } from 'react';
+import { useMutation } from 'react-query';
 
-import { UserService } from '@/services/user/user.service'
+import { UserService } from '@/services/user/user.service';
 
-import { toastError } from '@/utils/api/withToastrErrorRedux'
+import { toastError } from '@/utils/api/withToastrErrorRedux';
 
-import { useFavorites } from '../../favorites/useFavorites'
+import { useFavorites } from '../../favorites/useFavorites';
 
-import styles from './FavoriteButton.module.scss'
-import HeartImage from './heart-animation.png'
+import styles from './FavoriteButton.module.scss';
+import HeartImage from './heart-animation.png';
+
 
 const FavoriteButton: FC<{ movieId: string }> = ({ movieId }) => {
-	const [isSmashed, setIsSmashed] = useState(false)
 
-	const { favoritesMovies, refetch } = useFavorites()
+	const [isSmashed, setIsSmashed] = useState(false);
+	const { favoritesMovies, refetch } = useFavorites();
 
 	useEffect(() => {
 		if (favoritesMovies) {
-			const isHasMovie = favoritesMovies.some((f) => f._id === movieId)
-			if (isSmashed !== isHasMovie) setIsSmashed(isHasMovie)
+			const isHasMovie = favoritesMovies.some((f) => f._id === movieId);
+			if (isSmashed !== isHasMovie) setIsSmashed(isHasMovie);
 		}
-	}, [favoritesMovies, isSmashed, movieId])
+	}, [favoritesMovies, isSmashed, movieId]);
 
 	const { mutateAsync } = useMutation(
 		'update actor',
 		() => UserService.toggleFavorite(movieId),
 		{
 			onError(error) {
-				toastError(error, 'Update favorite list')
+				toastError(error, 'Update favorite list');
 			},
 			onSuccess() {
-				setIsSmashed(!isSmashed)
-				refetch()
+				setIsSmashed(!isSmashed);
+				refetch();
 			},
-		}
-	)
+		},
+	);
 
 	return (
 		<button
@@ -45,7 +46,7 @@ const FavoriteButton: FC<{ movieId: string }> = ({ movieId }) => {
 			})}
 			style={{ backgroundImage: `url(${HeartImage.src})` }}
 		/>
-	)
-}
+	);
+};
 
-export default FavoriteButton
+export default FavoriteButton;

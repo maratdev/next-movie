@@ -12,7 +12,11 @@ const GalleryItem: FC<IGalleryItemProps> = ({ item, variant }) => {
 			[styles.withText]: item.content,
 			[styles.horizontal]: variant === 'horizontal',
 			[styles.vertical]: variant === 'vertical',
-		})} href={item.url}>
+		})}
+					title={item.name}
+					href={item.url}
+					aria-label={item.name}
+		>
 			<Image
 				alt={item.name}
 				src={item.posterPath}
