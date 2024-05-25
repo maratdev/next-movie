@@ -1,11 +1,10 @@
 import { FC } from 'react';
+import Auth from '@/screens/auth/Auth';
 
-const Auth: FC = () => {
+const AuthPage: FC = () => {
 	return (
-		<div>
-			Auth
-		</div>
+			<Auth/>
 	);
 };
 
-export default Auth;
+export default AuthPage;

@@ -1,12 +1,11 @@
-import { FC } from 'react';
-import styles from './404.module.scss'
+import Heading from '@/ui/heading/Heading'
+import Meta  from '@/utils/meta/Meta'
 
-const NotFound: FC = () => {
-    return (
-        <div className={styles.container}>
-            404
-        </div>
-    );
-};
 
-export default NotFound;
+export default function Error404() {
+	return (
+		<Meta title='Page not found'>
+			<Heading title='404 - Page Not Found' />
+		</Meta>
+	)
+}

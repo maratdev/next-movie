@@ -14,7 +14,8 @@ export interface IParameters {
 	country: string
 }
 
-export interface IActor {
+
+export interface IDirector {
 	_id: string
 	photo: string
 	name: string
@@ -29,9 +30,9 @@ export interface IMovie {
 	title: string
 	parameters: IParameters
 	genres: IGenre[]
-	actors: IActor[]
+	directors: IDirector[]
 	countOpened: number
 	videoUrl: string
-	rating: number
+	rating: string
 	slug: string
 }

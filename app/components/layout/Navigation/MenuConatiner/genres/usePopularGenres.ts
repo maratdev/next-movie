@@ -6,7 +6,7 @@ import { getGenreUrl } from '@/config/url.config';
 export const usePopularGenres = () => {
 	return useQuery('popular genre menu', () => GenreService.getAll(), {
 		select: ({ data }) =>
-			data
+			data.filter(genre => genre.icon)
 				.map(
 					(genre) =>
 						({
@@ -15,6 +15,6 @@ export const usePopularGenres = () => {
 							title: genre.name,
 						}) as IMenuItem,
 				)
-				.splice(0, 4),
+				.splice(0, 6),
 	});
 };

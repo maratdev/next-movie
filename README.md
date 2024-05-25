@@ -1,40 +1,72 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 📽️  Watch anime online
 
-## Getting Started
+_***Сервис, просмотра фильма в жанре аниме. [Backend](https://github.com/maratdev/movie-nest)***_
 
-First, run the development server:
+## ⚙️ Функционал:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [x] Админка: создание: Фильмов, Жанров, Режисеров
+- [x] Админка: статистика о популярных фильмах и пользователей
+- [x] Регистрация, авторизация и аутентификация (JWT)
+- [x] Редактировать свой профиль
+- [x] Популярные фильмы
+- [x] Вишлист фильмов
+- [x] Просмотр фильмов встроеном видеоплеере
+- [x] Сохранять фильмы в избранное
+- [x] Оценка фильма
+- [x] Форма поиска фильмов
+- [x] Валидация всех форм
+- [x] Прелоадер
+- [x] Защита роутов
+- [x] Animation and Transform
+- [x] Оптимизация шрифтов
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Стэк:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- HTML5
+    - Семантическая вёрстка
+    - Разметка Open Graph
+    - Skeleton
+- CSS3
+    - Flexbox
+    - Tailwindcss
+    - Postcss
+- JavaScript
+    - ES6
+    - JSON
+    - Axios
+    - JSX
+- [Next.js 14](https://nextjs.org/)
+    - React-hook
+    - React-query
+    - React router
+    - React-redux
+- TypeScript
+- NPM
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+---
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+**🌐 Проект:**
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- [Фронтенд](https://movie-dom.ru)
+- [Бэкенд](https://movie-dom.store/api)
+- IP адрес сервера `5.35.84.174`
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+### Установка и запуск приложения на локальной машине:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Запуск:
+### `npm run start`
+Запуск dev режиме:
+### `npm run dev`
+Деплой:
+### `npm run build`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+👤 **Автор**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+**_Marat Zakar_**
+
+- Telegram: [@voredev](https://t.me/voredev)
+- GitHub: [@maratdev](https://github.com/maratdev)

@@ -1,21 +1,29 @@
-import { FC } from 'react';
-import style from '../Menu.module.scss';
-import { usePathname } from 'next/navigation';
-import cn from 'classnames';
-import { IMenuItem } from '@/components/layout/Navigation/MenuConatiner/menu.interface';
-import Link from 'next/link';
-import MaterialIcon from '@/ui/MaterialIcon';
+import cn from 'classnames'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { FC } from 'react'
+
+import { MaterialIcon } from '@/ui/icons/MaterialIcon'
+
+import styles from '../../Menu.module.scss'
+import { IMenuItem } from '@/components/layout/Navigation/MenuConatiner/menu.types';
+
 
 const MenuItem: FC<{ item: IMenuItem }> = ({ item }) => {
-	const asPath = usePathname();
+	const { asPath } = useRouter()
+
 	return (
-		<li className={cn({ [style.active]: asPath === item.link })}>
+		<li
+			className={cn({
+				[styles.active]: asPath === item.link,
+			})}
+		>
 			<Link href={item.link}>
 				<MaterialIcon name={item.icon} />
 				<span>{item.title}</span>
 			</Link>
 		</li>
-	);
-};
+	)
+}
 
-export default MenuItem;
+export default MenuItem

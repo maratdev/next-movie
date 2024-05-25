@@ -11,7 +11,7 @@ const Logo: FC = () => {
 				alt='Logo Cinema'
 				draggable={false}
 				priority={true}
-				fetchPriority='high'
+				width={220}
 			/>
 		</Link>
 	);
