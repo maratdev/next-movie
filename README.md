@@ -2,6 +2,8 @@
 
 _***Сервис, просмотра фильма в жанре аниме. [Backend](https://github.com/maratdev/movie-nest)***_
 
+![git_img.png](public/git_img.png)
+
 ## ⚙️ Функционал:
 
 - [x] Админка: создание: Фильмов, Жанров, Режисеров
