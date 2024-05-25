@@ -34,10 +34,6 @@ const Catalog: FC<ICatalog> = ({ title, description, movies }) => {
 					/>
 				))}
 			</section>
-
-			{/* <div className="text-center">
-				<button className={styles.button}>Load more</button>
-			</div> */}
 		</Meta>
 	)
 }

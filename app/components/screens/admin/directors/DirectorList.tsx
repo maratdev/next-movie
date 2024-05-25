@@ -1,4 +1,4 @@
-import { useActors } from './useActors';
+import { useDirectors } from './useDirectors';
 import { FC } from 'react';
 
 import AdminHeader from '@/components/ui/admin-table/AdminHeader/AdminHeader';
@@ -9,7 +9,7 @@ import Heading from '@/ui/heading/Heading';
 
 import Meta from '@/utils/meta/Meta';
 
-const ActorList: FC = () => {
+const DirectorList: FC = () => {
 	const {
 		createAsync,
 		data,
@@ -17,12 +17,12 @@ const ActorList: FC = () => {
 		deleteAsync,
 		searchTerm,
 		handleSearch,
-	} = useActors();
+	} = useDirectors();
 
 	return (
-		<Meta title='Actors'>
+		<Meta title='Directors'>
 			<AdminNavigation />
-			<Heading title='Actors' />
+			<Heading title='Directors' />
 			<AdminHeader
 				onClick={createAsync}
 				handleSearch={handleSearch}
@@ -38,4 +38,4 @@ const ActorList: FC = () => {
 	);
 };
 
-export default ActorList;
+export default DirectorList;

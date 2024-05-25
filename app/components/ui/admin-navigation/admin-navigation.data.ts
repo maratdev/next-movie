@@ -16,8 +16,8 @@ export const navItems: INavItem[] = [
 		link: getAdminUrl('movies'),
 	},
 	{
-		title: 'Actors',
-		link: getAdminUrl('actors'),
+		title: 'Directors',
+		link: getAdminUrl('directors'),
 	},
 	{
 		title: 'Genres',

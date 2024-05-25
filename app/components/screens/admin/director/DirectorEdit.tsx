@@ -1,5 +1,5 @@
-import { IActorEditInput } from './actor-edit.interface'
-import { useActorEdit } from './useActorEdit'
+import { IDirectorEditInput } from './director-edit.interface'
+import { useDirectorEdit } from './useDirectorEdit'
 import { FC } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 
@@ -17,7 +17,7 @@ import  Meta  from '@/utils/meta/Meta'
 import generateSlug from '@/utils/string/generateSlug'
 import SkeletonLoader from '@/ui/skeleton/SkeletonLoader';
 
-const ActorEdit: FC = () => {
+const DirectorEdit: FC = () => {
 	const {
 		handleSubmit,
 		register,
@@ -25,16 +25,16 @@ const ActorEdit: FC = () => {
 		setValue,
 		getValues,
 		control,
-	} = useForm<IActorEditInput>({
+	} = useForm<IDirectorEditInput>({
 		mode: 'onChange',
 	})
 
-	const { isLoading, onSubmit } = useActorEdit(setValue)
+	const { isLoading, onSubmit } = useDirectorEdit(setValue)
 
 	return (
-		<Meta title="Edit actor">
+		<Meta title="Edit directors">
 			<AdminNavigation />
-			<Heading title="Edit actor" />
+			<Heading title="Edit Directors" />
 			{isLoading ? (
 				<SkeletonLoader count={3} />
 			) : (
@@ -63,7 +63,7 @@ const ActorEdit: FC = () => {
 								<UploadField
 									placeholder="Photo"
 									error={error}
-									folder="actors"
+									folder="director"
 									image={value}
 									onChange={onChange}
 								/>
@@ -81,4 +81,4 @@ const ActorEdit: FC = () => {
 	)
 }
 
-export default ActorEdit
+export default DirectorEdit

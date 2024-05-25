@@ -4,7 +4,7 @@ import { useMutation } from 'react-query'
 import { MovieService } from '@/services/movie/movie.service'
 
 export const useUpdateCountOpened = (slug: string) => {
-	const { mutateAsync } = useMutation('update actor', () =>
+	const { mutateAsync } = useMutation('update director', () =>
 		MovieService.updateCountOpened(slug)
 	)
 

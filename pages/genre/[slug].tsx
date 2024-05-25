@@ -25,8 +25,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 			fallback: 'blocking',
 		}
 	} catch (e) {
-		// console.log(errorCatch(e))
-
 		return {
 			paths: [],
 			fallback: false,

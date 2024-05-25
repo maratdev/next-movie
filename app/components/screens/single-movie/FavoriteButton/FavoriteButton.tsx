@@ -9,9 +9,6 @@ import { toastError } from '@/utils/api/withToastrErrorRedux';
 import { useFavorites } from '../../favorites/useFavorites';
 
 import styles from './FavoriteButton.module.scss';
-import HeartImage from './heart-animation.png';
-
-
 const FavoriteButton: FC<{ movieId: string }> = ({ movieId }) => {
 
 	const [isSmashed, setIsSmashed] = useState(false);
@@ -25,7 +22,7 @@ const FavoriteButton: FC<{ movieId: string }> = ({ movieId }) => {
 	}, [favoritesMovies, isSmashed, movieId]);
 
 	const { mutateAsync } = useMutation(
-		'update actor',
+		'update director',
 		() => UserService.toggleFavorite(movieId),
 		{
 			onError(error) {
@@ -44,7 +41,7 @@ const FavoriteButton: FC<{ movieId: string }> = ({ movieId }) => {
 			className={cn(styles.button, {
 				[styles.animate]: isSmashed,
 			})}
-			style={{ backgroundImage: `url(${HeartImage.src})` }}
+			style={{ backgroundImage: `url('/heart-animation.png')` }}
 		/>
 	);
 };

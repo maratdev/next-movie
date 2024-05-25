@@ -15,6 +15,6 @@ export const usePopularGenres = () => {
 							title: genre.name,
 						}) as IMenuItem,
 				)
-				.splice(0, 4),
+				.splice(0, 6),
 	});
 };

@@ -6,22 +6,22 @@ import Slider from '@/ui/slider/Slider';
 import Gallery from '@/ui/galery/Gallery';
 import SubHeading from '@/ui/heading/SubHeading';
 
-const Home: FC<IHome> = ({slides, actors, trendingMovies}) => {
+const Home: FC<IHome> = ({slides, directors, trendingMovies}) => {
 	return (
 		<Meta
-			title='Watch movies online'
+			title='Watch anime online'
 			description='Watch MovieApp movies and TV shows online or stream right to your browser.'
 			keywords='movie,tv,watch,online'
 		>
-			<Heading title='Watch movies online' className='text-gray-300 mb-8 text-xl' />
-			{slides.length && <Slider slides={slides} />}
+			<Heading title='Watch anime online' className='text-gray-300 mb-8 text-xl' />
+			{slides?.length > 0 && <Slider slides={slides} />}
 			<div className="my-10">
 				<SubHeading title="Trending now" />
-				{trendingMovies.length && <Gallery items={trendingMovies} />}
+				{trendingMovies?.length > 0 && <Gallery items={trendingMovies} />}
 			</div>
 			<div>
-				<SubHeading title="Best actors" />
-				{actors.length && <Gallery items={actors} />}
+				<SubHeading title="Best Directors" />
+				{directors?.length > 0 && <Gallery items={directors} />}
 			</div>
 		</Meta>
 	);

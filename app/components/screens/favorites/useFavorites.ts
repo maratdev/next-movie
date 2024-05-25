@@ -10,7 +10,7 @@ export const useFavorites = () => {
 		data: favoritesMovies,
 		refetch,
 	} = useQuery('Favorite movies', () => UserService.getFavorites(), {
-		select: ({ data }) => data,
+		select: ({ data }) => data.toReversed(),
 		enabled: !!user,
 	});
 

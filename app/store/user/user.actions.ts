@@ -40,7 +40,7 @@ export const logout = createAsyncThunk('auth/logout', async () => {
 })
 
 export const checkAuth = createAsyncThunk<IAuthResponse>(
-	'auth/check-auth',
+	'auth/jwt',
 	async (_, thunkAPI) => {
 		try {
 			const response = await AuthService.getNewTokens()

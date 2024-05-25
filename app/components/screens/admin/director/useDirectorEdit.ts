@@ -1,52 +1,52 @@
-import { IActorEditInput } from './actor-edit.interface'
+import { IDirectorEditInput } from './director-edit.interface'
 import { useRouter } from 'next/router'
 import { SubmitHandler, UseFormSetValue } from 'react-hook-form'
 import { useMutation, useQuery } from 'react-query'
 import { toastr } from 'react-redux-toastr'
 
-import { ActorService } from '@/services/actor/actor.service'
+import { DirectorService } from '@/services/director/directorService'
 
 import { toastError } from '@/utils/api/withToastrErrorRedux'
 import { getKeys } from '@/utils/object/getKeys'
 
 import { getAdminUrl } from '@/config/url.config'
 
-export const useActorEdit = (setValue: UseFormSetValue<IActorEditInput>) => {
+export const useDirectorEdit = (setValue: UseFormSetValue<IDirectorEditInput>) => {
 	const { query, push } = useRouter()
 
-	const actorId = String(query.id)
+	const directorId = String(query.id)
 
 	const { isLoading } = useQuery(
-		['actor', actorId],
-		() => ActorService.getById(actorId),
+		['director', directorId],
+		() => DirectorService.getById(directorId),
 		{
-			onSuccess({ data }: { data: IActorEditInput[] }) {
+			onSuccess({ data }: { data: IDirectorEditInput[] }) {
 				getKeys(data).forEach((key: any) => {
 					setValue(key, data[key])
 				})
 			},
 			onError(error) {
-				toastError(error, 'Get actor')
+				toastError(error, 'Get director')
 			},
 			enabled: !!query.id,
 		}
 	)
 
 	const { mutateAsync } = useMutation(
-		'update actor',
-		(data: IActorEditInput) => ActorService.update(actorId, data),
+		'update director',
+		(data: IDirectorEditInput) => DirectorService.update(directorId, data),
 		{
 			onError(error) {
-				toastError(error, 'Update actor')
+				toastError(error, 'Update director')
 			},
 			onSuccess() {
-				toastr.success('Update actor', 'update was successful')
-				push(getAdminUrl('actors'))
+				toastr.success('Update directors', 'update was successful')
+				push(getAdminUrl('directors'))
 			},
 		}
 	)
 
-	const onSubmit: SubmitHandler<IActorEditInput> = async (data) => {
+	const onSubmit: SubmitHandler<IDirectorEditInput> = async (data) => {
 		await mutateAsync(data)
 	}
 

@@ -11,8 +11,8 @@ export const MovieService = {
 		return axiosClassic.get<IMovie>(getMoviesUrl(`/slug/${slug}`))
 	},
 
-	async getByActor(actorId: string) {
-		return axiosClassic.get<IMovie[]>(getMoviesUrl(`/actor/${actorId}`))
+	async getByDirector(directorId: string) {
+		return axiosClassic.get<IMovie[]>(getMoviesUrl(`/director/${directorId}`))
 	},
 
 	async getByGenres(genreIds: string[]) {

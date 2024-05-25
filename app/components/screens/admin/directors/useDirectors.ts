@@ -7,30 +7,30 @@ import { ITableItem } from '@/ui/admin-table/AdminTable/admin-table.interface'
 
 import { useDebounce } from '@/hooks/useDebounce'
 
-import { ActorService } from '@/services/actor/actor.service'
+import { DirectorService } from '@/services/director/directorService'
 
 import { toastError } from '@/utils/api/withToastrErrorRedux'
 
 import { getAdminUrl } from '@/config/url.config'
 
-export const useActors = () => {
+export const useDirectors = () => {
 	const [searchTerm, setSearchTerm] = useState('')
 	const debouncedSearch = useDebounce(searchTerm, 500)
 
 	const queryData = useQuery(
-		['actor list', debouncedSearch],
-		() => ActorService.getAll(debouncedSearch),
+		['director list', debouncedSearch],
+		() => DirectorService.getAll(debouncedSearch),
 		{
 			select: ({ data }) =>
 				data.map(
-					(actor): ITableItem => ({
-						_id: actor._id,
-						editUrl: getAdminUrl(`actor/edit/${actor._id}`),
-						items: [actor.name, String(actor.countMovies)],
+					(director): ITableItem => ({
+						_id: director._id,
+						editUrl: getAdminUrl(`director/edit/${director._id}`),
+						items: [director.name, String(director.countMovies)],
 					})
 				),
 			onError(error) {
-				toastError(error, 'actor list')
+				toastError(error, 'director list')
 			},
 		}
 	)
@@ -42,28 +42,28 @@ export const useActors = () => {
 	const { push } = useRouter()
 
 	const { mutateAsync: createAsync } = useMutation(
-		'create actor',
-		() => ActorService.create(),
+		'create director',
+		() => DirectorService.create(),
 		{
 			onError(error) {
-				toastError(error, 'Create actor')
+				toastError(error, 'Create directors')
 			},
 			onSuccess({ data: _id }) {
-				toastr.success('Create actor', 'create was successful')
-				push(getAdminUrl(`actor/edit/${_id}`))
+				toastr.success('Create director', 'create was successful')
+				push(getAdminUrl(`director/edit/${_id}`))
 			},
 		}
 	)
 
 	const { mutateAsync: deleteAsync } = useMutation(
-		'delete actor',
-		(actorId: string) => ActorService.delete(actorId),
+		'delete director',
+		(directorId: string) => DirectorService.delete(directorId),
 		{
 			onError(error) {
-				toastError(error, 'Delete actor')
+				toastError(error, 'Delete director')
 			},
 			onSuccess() {
-				toastr.success('Delete actor', 'delete was successful')
+				toastr.success('Delete director', 'delete was successful')
 				queryData.refetch()
 			},
 		}

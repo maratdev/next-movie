@@ -10,5 +10,5 @@ export interface ISlideMovie
 export interface IHome {
 	slides: ISlide[]
 	trendingMovies: IGalleryItem[]
-	actors: IGalleryItem[]
+	directors: IGalleryItem[]
 }

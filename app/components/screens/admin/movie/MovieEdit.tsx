@@ -16,7 +16,7 @@ import  Meta from '@/utils/meta/Meta'
 import generateSlug from '@/utils/string/generateSlug'
 
 import { IMovieEditInput } from './movie-edit.interface'
-import { useAdminActors } from './useAdminActors'
+import { useAdminDirectors } from './useAdminDirectors'
 import { useAdminGenres } from './useAdminGenres'
 import { useMovieEdit } from './useMovieEdit'
 import SkeletonLoader from '@/ui/skeleton/SkeletonLoader';
@@ -39,8 +39,7 @@ const MovieEdit: FC = () => {
 
 	const { onSubmit, isLoading } = useMovieEdit(setValue)
 	const { data: genres, isLoading: isGenresLoading } = useAdminGenres()
-	const { data: actors, isLoading: isActorsLoading } = useAdminActors()
-
+	const { data: directors, isLoading: isDirectorsLoading } = useAdminDirectors()
 	return (
 		<Meta title="Edit movie">
 			<AdminNavigation />
@@ -107,18 +106,18 @@ const MovieEdit: FC = () => {
 							)}
 						/>
 						<Controller
-							name="actors"
+							name="directors"
 							control={control}
 							rules={{
-								required: 'Please select at least one actor!',
+								required: 'Please select at least one director!',
 							}}
 							render={({ field, fieldState: { error } }) => (
 								<DynamicSelect
 									error={error}
 									field={field}
-									placeholder="Actors"
-									options={actors || []}
-									isLoading={isActorsLoading}
+									placeholder="Directors"
+									options={directors || []}
+									isLoading={isDirectorsLoading}
 									isMulti
 								/>
 							)}
