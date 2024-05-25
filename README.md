@@ -1,23 +1,72 @@
-# Flix Movie Website
+# 📽️  Watch anime online
 
-    How To Create Responsive Movie Website Using HTML CSS And jQuery
+_***Сервис, просмотра фильма в жанре аниме. [Backend](https://github.com/maratdev/movie-nest)***_
 
-# Preview
+## ⚙️ Функционал:
 
-!["How To Create Responsive Movie Website Using HTML CSS"]( "How To Create Responsive Movie Website Using HTML CSS ")
+- [x] Админка: создание: Фильмов, Жанров, Режисеров
+- [x] Админка: статистика о популярных фильмах и пользователей
+- [x] Регистрация, авторизация и аутентификация (JWT)
+- [x] Редактировать свой профиль
+- [x] Популярные фильмы
+- [x] Вишлист фильмов
+- [x] Просмотр фильмов встроеном видеоплеере
+- [x] Сохранять фильмы в избранное
+- [x] Оценка фильма
+- [x] Форма поиска фильмов
+- [x] Валидация всех форм
+- [x] Прелоадер
+- [x] Защита роутов
+- [x] Animation and Transform
+- [x] Оптимизация шрифтов
 
-# Video
+## 🛠️ Стэк:
 
-    https://youtu.be/4vgkZslEl1w
+- HTML5
+    - Семантическая вёрстка
+    - Разметка Open Graph
+    - Skeleton
+- CSS3
+    - Flexbox
+    - Tailwindcss
+    - Postcss
+- JavaScript
+    - ES6
+    - JSON
+    - Axios
+    - JSX
+- [Next.js 14](https://nextjs.org/)
+    - React-hook
+    - React-query
+    - React router
+    - React-redux
+- TypeScript
+- NPM
 
-# Description
+---
 
-    We will make Responsive Movie Website Using HTML CSS And jQuery, Owl Carousel
+**🌐 Проект:**
 
-# Resource
+- [Фронтенд](https://movie-dom.ru)
+- [Бэкенд](https://movie-dom.store/api)
+- IP адрес сервера `5.35.84.174`
 
-    Boxicons: https://boxicons.com/
+---
 
-    Google font: https://fonts.google.com/
+### Установка и запуск приложения на локальной машине:
 
-    Owl Carousel: https://owlcarousel2.github.io/OwlCarousel2/docs/started-welcome.html
+Запуск:
+### `npm run start`
+Запуск dev режиме:
+### `npm run dev`
+Деплой:
+### `npm run build`
+
+
+
+👤 **Автор**
+
+**_Marat Zakar_**
+
+- Telegram: [@voredev](https://t.me/voredev)
+- GitHub: [@maratdev](https://github.com/maratdev)
