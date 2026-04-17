@@ -34,7 +34,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 	} catch {
 		return {
 			paths: [],
-			fallback: false,
+			fallback: 'blocking',
 		}
 	}
 }
@@ -62,7 +62,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 	} catch (e) {
 		errorCatch(e)
 		return {
-			notFound: true,
+			props: { movies: [] },
+			revalidate: 30,
 		}
 	}
 }

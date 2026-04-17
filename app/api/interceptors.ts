@@ -7,7 +7,8 @@ import { removeTokensStorage } from '@/services/auth/auth.helper';
 import { IS_PRODUCTION } from '@/config/constants';
 
 export const axiosClassic = axios.create({
-	baseURL: IS_PRODUCTION ? API_SERVER_URL : API_URL,
+	baseURL:
+		typeof window === 'undefined' && IS_PRODUCTION ? API_SERVER_URL : API_URL,
 	headers: getContentType(),
 });
 

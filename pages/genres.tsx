@@ -24,8 +24,8 @@ export const getStaticProps: GetStaticProps = async () => {
 		errorCatch(e)
 
 		return {
-			props: {},
-			// notFound: true,
+			props: { collections: [] },
+			revalidate: 30,
 		}
 	}
 }

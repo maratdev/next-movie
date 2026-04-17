@@ -1,0 +1,27 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        REACT_APP_URL: ${REACT_APP_URL:-http://localhost:4001}
+        REACT_APP_ENV: ${REACT_APP_ENV:-production}
+        REACT_APP_SERVER: ${REACT_APP_SERVER:-http://host.docker.internal:4000}
+    container_name: next-movie-app
+    ports:
+      - "4001:4001"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      NODE_ENV: production
+      PORT: 4001
+      REACT_APP_URL: ${REACT_APP_URL:-http://localhost:4001}
+      REACT_APP_ENV: ${REACT_APP_ENV:-production}
+      REACT_APP_SERVER: ${REACT_APP_SERVER:-http://host.docker.internal:4000}
+    networks:
+      - shared_movie_net
+
+networks:
+  shared_movie_net:
+    external: true
+    name: shared_movie_net

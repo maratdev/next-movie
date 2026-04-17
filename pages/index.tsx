@@ -51,14 +51,13 @@ export const getStaticProps: GetStaticProps = async () => {
 			revalidate: 30,
 		}
 	} catch (error) {
-
-
 		return {
 			props: {
 				directors: [],
 				slides: [],
 				trendingMovies: [],
 			} as IHome,
+			revalidate: 30,
 		}
 	}
 }
