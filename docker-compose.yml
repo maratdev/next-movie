@@ -6,7 +6,7 @@ services:
       args:
         REACT_APP_URL: ${REACT_APP_URL:-http://localhost:4001}
         REACT_APP_ENV: ${REACT_APP_ENV:-production}
-        REACT_APP_SERVER: ${REACT_APP_SERVER:-http://host.docker.internal:4000}
+        REACT_APP_SERVER: ${REACT_APP_SERVER:-https://movie-nest-egu3.onrender.com}
     container_name: next-movie-app
     ports:
       - "4001:4001"
@@ -17,7 +17,7 @@ services:
       PORT: 4001
       REACT_APP_URL: ${REACT_APP_URL:-http://localhost:4001}
       REACT_APP_ENV: ${REACT_APP_ENV:-production}
-      REACT_APP_SERVER: ${REACT_APP_SERVER:-http://host.docker.internal:4000}
+      REACT_APP_SERVER: ${REACT_APP_SERVER:-https://movie-nest-egu3.onrender.com}
     networks:
       - shared_movie_net
 

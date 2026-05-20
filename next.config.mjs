@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
-const appServer = process.env.REACT_APP_SERVER || 'http://backend:4000';
+const appServer =
+	process.env.REACT_APP_SERVER || 'https://movie-nest-egu3.onrender.com';
 
 const nextConfig = {
   poweredByHeader: false,
